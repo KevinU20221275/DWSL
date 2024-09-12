@@ -30,4 +30,9 @@ INSERT INTO Cargo (nombreCargo, descripcion) VALUES ("Gerente de Marketing", "En
 INSERT INTO Cargo (nombreCargo, descripcion) VALUES ("Contador", "Encargado de llevar la contabilidad de la empresa");
 INSERT INTO Cargo (nombreCargo, descripcion) VALUES ("Programador Frontend", "Encargado de desarrollar la parte visual del software");
 
+INSERT INTO Empleado (nombre, telefono, correo, salario, cargoId) VALUES ("Juan","787478","ju@gmail.com",500,1);
+INSERT INTO Empleado (nombre, telefono, correo, salario, cargoId) VALUES ("Sonia","852422","son@gmail.com",400,2);
+INSERT INTO Empleado (nombre, telefono, correo, salario, cargoId) VALUES ("Yone","22323344","yo@gmail.com",550,3);
+
+
 
