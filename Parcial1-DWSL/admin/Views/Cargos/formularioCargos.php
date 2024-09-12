@@ -92,7 +92,7 @@ $route = 'cargos';
                     <div class="bg-secondary rounded p-4 pt-1  my-2 mx-3">
                         <span class="text-danger text-center">
                             <?php
-                            echo $_SESSION['empty_field_error'];
+                            echo isset($_SESSION['empty_field_error']) ? $_SESSION['empty_field_error'] : "";
                             unset($_SESSION['empty_field_error']);
                             ?>
                         </span>

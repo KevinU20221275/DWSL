@@ -35,7 +35,7 @@ if ($_SESSION['user_name'] == "") {
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <?php include_once('./modules/spinner.php') ?>
+        <?php include_once('./Views/modules/spinner.php') ?>
         <!-- Spinner End -->
 
 

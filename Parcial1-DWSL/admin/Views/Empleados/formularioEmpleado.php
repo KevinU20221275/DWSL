@@ -102,7 +102,7 @@ $route = 'empleados';
                     <div class="bg-secondary rounded p-4 pt-1  my-2 mx-3">
                         <span class="text-danger text-center">
                             <?php
-                            echo $_SESSION['empty_field_error'];
+                            echo isset($_SESSION['empty_field_error']) ? $_SESSION['empty_field_error'] : "";
                             unset($_SESSION['empty_field_error']);
                             ?>
                         </span>
@@ -123,7 +123,7 @@ $route = 'empleados';
                             <label for="salario">Salario <span class="text-danger">*</span></label>
                             <span class="text-danger">
                                 <?php
-                                echo $_SESSION['error_message'];
+                                echo isset($_SESSION['error_message']) ? $_SESSION['error_message'] : "";
                                 unset($_SESSION['error_message']);
                                 ?>
                             </span>

@@ -16,16 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = isset($_POST['id']) ? $_POST['id'] : "";
     $re_password = isset($_POST['re_password']) ? $_POST['re_password'] : "";
 
-    if ($re_password != $usuario->password){
+    if ($re_password != $usuario->password) {
         $_SESSION['error_message'] = "Las contraseñas no coinciden";
     } else {
         if ($usuario->update($id)) {
-            set_message("Perfil Actualizado","Se actualizaron tus datos correctamente", "success");
-    
+            set_message("Perfil Actualizado", "Se actualizaron tus datos correctamente", "success");
+
             $_SESSION['user'] = $_POST['nombre'];
             $_SESSION['user_name'] = $_POST['nombreUsuario'];
         } else {
-            set_message("Error al Actualizar","No se pudo actualizar tus datos","danger");
+            set_message("Error al Actualizar", "No se pudo actualizar tus datos", "danger");
         }
     }
 }
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <?php include_once('./modules/spinner.php') ?>
+        <?php include_once('./Views/modules/spinner.php') ?>
         <!-- Spinner End -->
 
 
@@ -163,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="form-floating mb-3">
                                         <span class="text-danger">
                                             <?php
-                                            echo $_SESSION['error_message'];
+                                            echo isset($_SESSION['error_message']) ? $_SESSION["error_message"] : "";
                                             unset($_SESSION['error_message']);
                                             ?>
                                         </span>
