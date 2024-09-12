@@ -23,7 +23,7 @@ create table Empleado(
     FOREIGN KEY (cargoId) REFERENCES Cargo(Id) ON UPDATE CASCADE
 );
 
-
+-- la contraseña es 123
 INSERT INTO Usuario (nombre, nombreUsuario, password) VALUES ("Kevin Antonio","KevinU20221275","202cb962ac59075b964b07152d234b70");
 
 INSERT INTO Cargo (nombreCargo, descripcion) VALUES ("Gerente de Marketing", "Encargado de manejar el contenido de publicidad de la empresa");
