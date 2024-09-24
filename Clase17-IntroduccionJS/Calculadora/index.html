@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <script>
+      const operators = {
+        1: {
+          name: "suma",
+          operation: (a, b) => a + b,
+        },
+        2: {
+          name: "resta",
+          operation: (a, b) => a - b,
+        },
+        3: {
+          name: "division",
+          operation: (a, b) =>
+            b === 0 ? "Error, no se puede dividir por 0" : a / b,
+        },
+        4: {
+          name: "multiplicacion",
+          operation: (a, b) => a * b,
+        },
+      };
+
+      let operator = prompt(
+        "======== CALCULADORA ======== \n Ingrese la accion a Ejecutar \n 1) Sumar \n 2) Restar \n 3) Dividir \n 4) Multiplicar \n"
+      );
+
+      if (operator != null && operators[operator]) {
+        let input1 = prompt("Ingrese el primer numero: ");
+        let input2 = prompt("Ingrese el segundo numero: ");
+
+        let num1 = parseFloat(input1);
+        let num2 = parseFloat(input2);
+
+        if (isNaN(num1) || isNaN(num2)) {
+          document.write("Error: Debe ingresar valores numericos");
+        } else {
+          document.write(
+            `El resultado de la ${operators[operator].name} es : ${operators[
+              operator
+            ].operation(num1, num2)}`
+          );
+        }
+      } else {
+        document.write("Debe ingresar una accion valida");
+      }
+    </script>
+  </body>
+</html>

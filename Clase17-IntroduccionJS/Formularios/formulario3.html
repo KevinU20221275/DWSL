@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+    Ejercicio 3
+    Crear un formulario que contenga 3 select con la siguiente información:
+    departamento : san miguel , la unión, Morazán y Usulután.
+    genero: masculino, femenino.
+    educación: bachiller, pregrado, postgrado, doctorado.
+    Donde los select deben de ser manipulados de manera que se puede dejar seleccionada la opción que se desee del selected.
+    -->
+    <form action="" id="form">
+        <label for="department">Departamento:</label>
+        <select name="department" id="department" required>
+            <option value="">Seleccione</option>
+            <option value="1">San Miguel</option>
+            <option value="2">La Union</option>
+            <option value="3">Morazan</option>
+            <option value="4">Usulutan</option>
+        </select>
+
+        <label for="gender">Genero: </label>
+        <select name="gender" id="gender" required>
+            <option value="">Seleccione</option>
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+        </select>
+
+        <label for="education">Educacion</label>
+        <select name="education" id="education" required>
+            <option value="">Seleccione</option>
+            <option value="1">Bachiller</option>
+            <option value="2">Pregrado</option>
+            <option value="3">Posgrado</option>
+            <option value="4">Doctorado</option>
+        </select>
+
+        <input type="submit" value="Enviar" id="btn">
+    </form>
+    <script>
+        const form = document.getElementById('form')
+        const selectedDepartment = document.getElementById('department').value = localStorage.getItem('selectedDepartment') || '';
+        const selectedGender = document.getElementById('gender').value = localStorage.getItem('selectedGender') || '';
+        const selectedEducation = document.getElementById('education').value = localStorage.getItem('selectedEducation') || '';
+
+        // para eliminar los datos del local store solo refresque la pagina
+        localStorage.removeItem('selectedDepartment');
+        localStorage.removeItem('selectedGender');
+        localStorage.removeItem('selectedEducation');
+
+        form.addEventListener('submit', (event) => {
+            const { department, gender, education } = Object.fromEntries(new FormData(event.target))
+
+            // guardo los datos en el local store 
+            localStorage.setItem("selectedDepartment", department)
+            localStorage.setItem("selectedGender", gender)
+            localStorage.setItem("selectedEducation", education)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+    Ejercicio 2
+    Crear un formulario que reciba información en controles de 
+    nombre, dui, fecha de nacimiento, genero y departamento, 
+    detectar cuando los controles estén vacios colorear el fondo del control en gris
+    y cuando este lleno con al menos un caracter tenga color blanco.
+    -->
+
+    <form action="" id="form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" class="input" required>
+
+        <label for="dui">dui:</label>
+        <input type="number" id="dui" name="dui" class="input" required>
+
+        <label for="birthdate">Fecha de Nacimiento: </label>
+        <input type="text" id="birthdate" name="birthdate" class="input" required>
+
+        <label for="gender">Genero:</label>
+        <input type="text" id="gender" name="gender" class="input" required>
+
+        <label for="department">Departamento:</label>
+        <input type="text" id="department" name="department" class="input" required>
+
+        <input type="submit" value="Enviar" id="btn">
+    </form>
+    <script>
+        const inputs = document.querySelectorAll('.input');
+
+        inputs.forEach((input) => {
+            input.addEventListener('input', function() {
+                if (this.value.length > 0) {
+                    this.classList.add('input-with-text');
+                } else {
+                    this.classList.remove('input-with-text');
+                }
+            })
+        })
+    </script>
+</body>
+</html>
